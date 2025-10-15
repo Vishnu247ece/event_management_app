@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Add Event</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+  <h1>Create New Event</h1>
+  <form method="POST">
+    <label>Title:</label>
+    <input type="text" name="title" required>
+    <label>Description:</label>
+    <textarea name="description"></textarea>
+    <label>Date:</label>
+    <input type="date" name="date" required>
+    <label>Location:</label>
+    <input type="text" name="location" required>
+    <label>Capacity:</label>
+    <input type="number" name="capacity" min="1" required>
+    <button type="submit">Create Event</button>
+  </form>
+</body>
+</html>

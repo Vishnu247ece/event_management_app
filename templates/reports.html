@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Reports</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+  <h1>Ticket Sales Report</h1>
+
+  <div style="margin-bottom: 20px;">
+    <a href="{{ url_for('export_reports_csv') }}"><button>📄 Export CSV</button></a>
+    <a href="{{ url_for('export_reports_pdf') }}"><button>🧾 Export PDF</button></a>
+  </div>
+
+  <table>
+    <tr>
+      <th>Event</th>
+      <th>Tickets Sold</th>
+      <th>Capacity</th>
+      <th>Revenue</th>
+    </tr>
+    {% for r in reports %}
+    <tr>
+      <td>{{ r['title'] }}</td>
+      <td>{{ r['tickets_sold'] }}</td>
+      <td>{{ r['capacity'] }}</td>
+      <td>₹{{ r['revenue'] }}</td>
+    </tr>
+    {% endfor %}
+  </table>
+</body>
+</html>

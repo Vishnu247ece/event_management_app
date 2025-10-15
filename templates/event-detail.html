@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Event Details</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+  <h1>{{ event['title'] }}</h1>
+  <p><strong>Date:</strong> {{ event['date'] }}</p>
+  <p><strong>Location:</strong> {{ event['location'] }}</p>
+  <p><strong>Capacity:</strong> {{ event['capacity'] }}</p>
+  <p><strong>Description:</strong> {{ event['description'] }}</p>
+
+  <h2>Attendees</h2>
+  <ul>
+    {% for a in attendees %}
+      <li>{{ a['name'] }} ({{ a['email'] }})</li>
+    {% endfor %}
+  </ul>
+</body>
+</html>

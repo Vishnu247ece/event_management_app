@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Event Manager | Home</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+  <header>
+    <h1>🎉 Manage Your Events With Ease</h1>
+    <nav>
+      <a href="{{ url_for('events') }}">Events</a>
+      <a href="{{ url_for('attendees') }}">Attendees</a>
+      <a href="{{ url_for('reports') }}">Reports</a>
+    </nav>
+  </header>
+  <main>
+    <section class="summary">
+      <h2>Dashboard Summary</h2>
+      <div class="cards">
+        <div class="card">Total Events: 5</div>
+        <div class="card">Total Attendees: 120</div>
+        <div class="card">Tickets Sold: 95</div>
+      </div>
+    </section>
+  </main>
+</body>
+</html>

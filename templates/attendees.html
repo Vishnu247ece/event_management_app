@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Attendees</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+  <h1>All Attendees</h1>
+  <a href="{{ url_for('add_attendee') }}"><button>Register New Attendee</button></a>
+
+  <table>
+    <tr>
+      <th>ID</th>
+      <th>Name</th>
+      <th>Email</th>
+      <th>Event</th>
+      <th>Actions</th>
+    </tr>
+    {% for a in attendees %}
+    <tr>
+      <td>{{ a['id'] }}</td>
+      <td>{{ a['name'] }}</td>
+      <td>{{ a['email'] }}</td>
+      <td>{{ a['title'] }}</td>
+      <td>
+        <a href="{{ url_for('edit_attendee', id=a['id']) }}">Edit</a> |
+        <a href="{{ url_for('delete_attendee', id=a['id']) }}" onclick="return confirm('Delete this attendee?')">Delete</a>
+      </td>
+    </tr>
+    {% endfor %}
+  </table>
+</body>
+</html>

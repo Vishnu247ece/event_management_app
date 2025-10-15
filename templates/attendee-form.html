@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Register Attendee</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+  <h1>Register New Attendee</h1>
+  <form method="POST">
+    <label>Name:</label>
+    <input type="text" name="name" required>
+    <label>Email:</label>
+    <input type="email" name="email" required>
+    <label>Event:</label>
+    <select name="event_id" required>
+      {% for e in events %}
+        <option value="{{ e['id'] }}">{{ e['title'] }}</option>
+      {% endfor %}
+    </select>
+    <button type="submit">Register</button>
+  </form>
+</body>
+</html>
